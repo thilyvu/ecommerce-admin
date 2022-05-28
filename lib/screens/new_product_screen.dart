@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
+// ignore: must_be_immutable
 class NewProductScreen extends StatelessWidget {
   NewProductScreen({Key? key}) : super(key: key);
   final ProductController productController = Get.find();
@@ -114,6 +115,7 @@ class NewProductScreen extends StatelessWidget {
                   productController.isPopular),
               ElevatedButton(
                   onPressed: () async {
+                    // ignore: avoid_print
                     print(productController.newProduct);
                     database.addProduct(
                       Product(

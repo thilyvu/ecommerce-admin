@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ecommerce_admin/models/order_model.dart';
+import 'package:ecommerce_admin/models/models.dart';
 
-import '../models/product_model.dart';
 
 class DatabaseService {
   final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
@@ -14,6 +13,14 @@ class DatabaseService {
     });
   }
 
+  Stream<List<Category>> getCategories() {
+    return _firebaseFirestore
+        .collection('categories')
+        .snapshots()
+        .map((snapshot) {
+      return snapshot.docs.map((doc) => Category.fromSnapshot(doc)).toList();
+    });
+  }
   Stream<List<Order>> getOrders() {
     return _firebaseFirestore
         .collection('orders')
@@ -35,6 +42,9 @@ class DatabaseService {
 
   Future<void> addProduct(Product product) {
     return _firebaseFirestore.collection('products').add(product.toMap());
+  }
+  Future<void> addCategory(Category category) {
+    return _firebaseFirestore.collection('categories').add(category.toMap());
   }
   Future<void> updateField(Product product, String field, dynamic newValue) {
     return _firebaseFirestore.collection('products')

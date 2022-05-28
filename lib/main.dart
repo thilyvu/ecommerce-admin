@@ -1,7 +1,4 @@
-import 'package:ecommerce_admin/screens/home_screen.dart';
-import 'package:ecommerce_admin/screens/new_product_screen.dart';
-import 'package:ecommerce_admin/screens/orders_screen.dart';
-import 'package:ecommerce_admin/screens/products_screen.dart';
+import 'package:ecommerce_admin/screens/screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
@@ -19,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'My ecommerce Backend',
+      title: 'My ecommerce admin',
       theme: ThemeData(
         primaryColor: Colors.blue,
       ),
@@ -27,7 +24,9 @@ class MyApp extends StatelessWidget {
       getPages :[
         GetPage(name: '/products', page: ()=>  ProductScreen()),
         GetPage(name: '/orders', page: ()=>  OrderScreen()),
-        GetPage(name: '/products/new', page: ()=>  NewProductScreen())
+        GetPage(name: '/categories', page: ()=>  CategoryScreen()),
+        GetPage(name: '/products/new', page: ()=>  NewProductScreen()),
+        GetPage(name: '/categories/new', page: ()=>  NewCategoryScreen())
       ]
     );
   }

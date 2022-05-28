@@ -8,7 +8,9 @@ class StorageService {
   Future<void> uploadImage(XFile image) async {
     await storage.ref('product_images/${image.name}').putFile(File(image.path));
   }
-
+  Future<void> uploadCategoryImage(XFile image) async {
+    await storage.ref('category_images/${image.name}').putFile(File(image.path));
+  }
   Future<String> getDownloadURL(String imageName) async {
     String downloadURL =
         await storage.ref('product_images/$imageName').getDownloadURL();

@@ -1,6 +1,5 @@
 import 'package:ecommerce_admin/controllers/order_controller.dart';
 import 'package:ecommerce_admin/models/models.dart';
-import 'package:ecommerce_admin/models/order_model.dart';
 import 'package:ecommerce_admin/controllers/product_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

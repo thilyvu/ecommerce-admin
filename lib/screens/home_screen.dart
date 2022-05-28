@@ -1,5 +1,5 @@
-import 'package:ecommerce_admin/screens/orders_screen.dart';
-import 'package:ecommerce_admin/screens/products_screen.dart';
+
+import 'package:ecommerce_admin/screens/screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -24,7 +24,22 @@ class HomeScreen extends StatelessWidget {
             },
             child: const Card(
               child: Center(
-                child: Text('Go To Products'),
+                child: Text('Products', style: TextStyle(fontSize: 20),),
+              ),
+            ),
+          ),
+        ),
+        Container(
+          width: double.infinity,
+          height: 150,
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: InkWell(
+            onTap: (){
+              Get.to(()=> CategoryScreen());
+            },
+            child: const Card(
+              child: Center(
+                child: Text('Categories', style: TextStyle(fontSize: 20),),
               ),
             ),
           ),
@@ -39,11 +54,26 @@ class HomeScreen extends StatelessWidget {
             },
             child: const Card(
               child: Center(
-                child: Text('Go To Orders'),
+                child: Text('Orders', style: TextStyle(fontSize: 20),),
               ),
             ),
           ),
-        )],
+        ),  Container(
+          width: double.infinity,
+          height: 150,
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: InkWell(
+            onTap: (){
+              Get.to(()=> OrderScreen());
+            },
+            child: const Card(
+              child: Center(
+                child: Text('Users', style: TextStyle(fontSize: 20),),
+              ),
+            ),
+          ),
+        )
+        ],
       )),
     );
   }

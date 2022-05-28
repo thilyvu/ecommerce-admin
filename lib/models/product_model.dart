@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 
+// ignore: must_be_immutable
 class Product extends Equatable {
   final int id;
   final String name;
